@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Penicillin Drug Monograph</title>
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        /* Reset & base */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: 100px;
+            /* Added to offset sticky header height */
+        }
+
+        <style>
+    /* Reset & base */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        background: #f9fafb;
+        color: #1f2937;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        scroll-behavior: smooth;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    a {
+        color: #047857;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    h1, h2, h3, h4 {
+        margin-top: 0;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+        color: #ffffff;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #065f46;
+    }
+
+    h3 {
+        font-size: 1.375rem;
+        color: #047857;
+        margin-top: 1.5rem;
+    }
+
+    p {
+        margin: 0.6rem 0 1rem 0;
+        color: #4b5563;
+    }
+
+    ul, ol {
+        margin: 0.5rem 0 1.2rem 1.5rem;
+        color: #4b5563;
+    }
+
+    li {
+        margin: 0.4rem 0;
+    }
+
+    strong {
+        color: #065f46;
+    }
+
+    /* Layout */
+    header, footer {
+        background-color: #047857;
+        color: white;
+        text-align: center;
+        padding: 1.25rem 1rem;
+        flex-shrink: 0;
+    }
+
+    header h1 {
+        margin-bottom: 0.2rem;
+    }
+
+    header h2 {
+        font-weight: 600;
+        color: #bbf7d0;
+        font-size: 1.25rem;
+        margin-top: 0;
+    }
+
+    main {
+        flex-grow: 1;
+        max-width: 1200px;
+        margin: 2rem auto 3rem auto;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    section {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgb(0 0 0 / 0.05);
+        padding: 1.5rem 2rem;
+        margin-bottom: 2.5rem;
+        border-left: 6px solid #047857;
+        transition: box-shadow 0.3s ease;
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    .identifier-flex {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .identifier-img {
+        max-width: 180px;
+        flex-shrink: 0;
+        border-radius: 8px;
+    }
+
+    .identifier-text {
+        flex: 1;
+    }
+
+    @media (max-width: 640px) {
+        .identifier-flex {
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+        }
+
+        .identifier-text {
+            width: 100%;
+        }
+    }
+
+    section.section-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    section:hover {
+        box-shadow: 0 10px 25px rgb(4 120 87 / 0.25);
+    }
+
+    /* Grid layout */
+    .grid-2col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem 3rem;
+    }
+
+    .section-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #047857;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .section-title:hover {
+        transform: scale(1.05);
+    }
+
+    .material-icons {
+        font-size: 28px;
+        color: #047857;
+        transition: transform 0.6s ease infinite alternate;
+    }
+
+    .section-title:hover .material-icons {
+        animation: pulse 1.2s infinite ease-in-out alternate;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.15);
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.8rem;
+        overflow-x: auto;
+    }
+
+    th, td {
+        border: 1px solid #bbf7d0;
+        padding: 0.6rem 1rem;
+        text-align: left;
+        vertical-align: middle;
+        word-break: break-word;
+    }
+
+    th {
+        background: #d1fae5;
+        font-weight: 700;
+        color: #065f46;
+    }
+
+    .adverse-list {
+        columns: 2;
+        column-gap: 2rem;
+        margin-top: 0.7rem;
+    }
+
+    .pill {
+        display: inline-block;
+        background: #047857;
+        color: white;
+        padding: 0.2rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-top: 0.75rem;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pill:hover,
+    .pill:focus {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(4, 120, 87, 0.5);
+        outline: none;
+    }
+
+    .highlight-box {
+        background: #d1fae5;
+        border-left: 4px solid #047857;
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        color: #065f46;
+        font-weight: 600;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .highlight-box:hover {
+        box-shadow: 0 0 15px rgba(4, 120, 87, 0.4);
+    }
+
+    footer p {
+        color: #ffffff;
+        margin: 0;
+        font-size: 0.875rem;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        background: #f3f4f6;
+        border-bottom: 1px solid #cbd5e1;
+        z-index: 999;
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: #047857;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        flex-shrink: 0;
+        min-width: 80px;
+        text-align: center;
+        user-select: none;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+        background-color: #047857;
+        color: white;
+        outline: none;
+        transform: scale(1.05);
+        box-shadow: 0 0 8px rgba(4, 120, 87, 0.5);
+    }
+
+    nav a.active {
+        background-color: #065f46;
+        color: white;
+    }
+
+    @media (max-width:1023px) {
+        main {
+            max-width: 95%;
+            margin: 2rem auto 3rem auto;
+        }
+
+        .adverse-list {
+            columns: 1;
+        }
+
+        nav {
+            gap: 0.5rem;
+            padding: 0.5rem 0.5rem;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            padding: 0.35rem 0.6rem;
+            min-width: 60px;
+        }
+    }
+
+    @media (max-width:639px) {
+        h1 {
+            font-size: 2.25rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+        }
+
+        section {
+            padding: 1.25rem 1.5rem;
+            border-left-width: 4px;
+            margin-bottom: 1.75rem;
+        }
+
+        nav {
+            justify-content: flex-start;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    #brands ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    #brands li {
+        background: #d1fae5;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+        text-align: center;
+        flex: 1 1 200px;
+        max-width: 190px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        cursor: default;
+    }
+
+    #brands li:hover {
+        box-shadow: 0 15px 35px rgba(4, 120, 87, 0.3);
+        transform: translateY(-5px);
+    }
+
+    #brands li h4 {
+        margin: 0.75rem 0 0.4rem 0;
+    }
+
+    #brands li p {
+        margin: 0;
+        color: #047857;
+        font-weight: 600;
+    }
+</style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PHENOXYMETHYL<br>PENICILLIN</h1>
+    </header>
+    
+    <nav aria-label="Page sections navigation">
+        <a href="#intro" class="nav-link">Introduction</a>
+        <a href="#mechanism" class="nav-link">Mechanism</a>
+        <a href="#indications" class="nav-link">Indications & Dose</a>
+        <a href="#pharmacokinetics" class="nav-link">Pharmacokinetics</a>
+        <a href="#safety" class="nav-link">Safety Info</a>
+        <a href="#pregnancy" class="nav-link">Pregnancy</a>
+        <a href="#contraindications" class="nav-link">Contraindications</a>
+        <a href="#adverse" class="nav-link">Adverse Effects</a>
+        <a href="#penicillin-resistance" class="nav-link">Resistance</a> 
+        <a href="#interactions" class="nav-link">Drug Interactions</a>
+        <a href="#storage" class="nav-link">Storage</a>
+        <a href="#brands" class="nav-link">Brands</a>
+        <a href="#references" class="nav-link">References</a>
+    </nav>
+
+    <main>
+        <section aria-label="Key drug identifiers">
+            <div class="section-title" tabindex="0">
+                <span class="material-icons" aria-hidden="true">medical_information</span> Identifiers
+            </div>
+            <div class="identifier-flex"
+                style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px; flex-direction: row-reverse;">
+                <div style="display: flex; flex-direction: column; gap: 10px; max-width: 220px; flex-shrink: 0;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Penicillin-V-2D-skeletal.svg/1920px-Penicillin-V-2D-skeletal.svg.png"
+                        alt="Chemical structure 2D" style="width: 100%; height: auto; border-radius: 8px;" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Phenoxymethylpenicillin-from-xtal-3D-bs-17.png/500px-Phenoxymethylpenicillin-from-xtal-3D-bs-17.png"
+                        alt="Chemical structure 3D" style="width: 100%; height: auto; border-radius: 8px;" />
+                </div>
+                <div class="identifier-text" style="flex: 1; min-width: 250px;">
+                    <p><strong>Brand Names:</strong> Penicillin V (tab), Penisol V.K (syp) Penvee (syp)</p>
+                    <p><strong>Chemical Name:</strong>
+                        3,3-dimethyl-7-oxo-6
+                        [(phenoxyacetyl)amino]-4-thia-1-azabicyclo [3.2.0]
+                        heptane-2-carboxylic acid
+                    </p>
+                    <p><strong>Molecular Formula:</strong> C<sub>16</sub>H<sub>18</sub>N<sub>2</sub>O<sub>5</sub>S</p>
+                    <p><strong>Class:</strong> Penicillinase-sensitive penicillin</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="intro" tabindex="0" aria-label="Introduction to the drug Rivaroxaban">
+            <div class="section-title"><span class="material-icons" aria-hidden="true">info</span> Introduction</div>
+            <p>
+                Beta lactam antibiotic, An acid-labile penicillin
+                Penicillin V is an orally active member of the penicillin family. The discovery of penicillin by
+                Fleming in 1928 and its exploitation by Florey and his colleagues a decade later is well
+                known. The penicillin nucleus consists of a thiazolidine ring connected to a β-lactam ring to
+                which is attached a side-chain. The side-chain determines most of the pharmacological and
+                antibacterial properties of the penicillin in question. Penicillin kills bacteria by interfering
+                in the synthesis of the bacterial cell wall
+            </p>
+        </section>
+
+        <section id="mechanism" tabindex="0" aria-label="Mechanism of action">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">science</span> Mechanism of Action
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <p>
+                        Penicillin kills bacteria by blocking the final step of cell wall
+                        synthesis. It binds to penicillin-binding proteins using its β-lactam
+                        ring, preventing proper cross-linking of peptidoglycans. This
+                        weakens the cell wall, allowing water to enter the cell
+                        uncontrollably, leading to cell lysis and death
+                    </p>
+                </div>
+                <div style="flex-shrink: 0; max-width: 400px; width: 100%;">
+                    <img src="https://thesciencenotes.com/wp-content/uploads/2023/05/9b89f90e7bf2a4c5d014e41b02293b40-1024x1024.webp"
+                        alt="Mechanism of Action" style="width: 70%; height: auto; border-radius: 8px;" />
+                </div>
+            </div>
+        </section>
+
+
+        <section id="indications" tabindex="0" aria-label="Indications and usage">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">assignment_turned_in</span>
+                Indications and Dose
+            </div>
+            <div class="grid-2col">
+                <article>
+                    <strong>Oral infections: Otitis media</strong>
+                    <p><strong>Child 1–11 months:</strong> 62.5 mg four times a day, up to 12.5 mg/kg if necessary.</p>
+                    <p><strong>Child 1–5 years:</strong> 125 mg four times a day, up to 12.5 mg/kg if necessary.</p>
+                    <p><strong>Child 6–11 years:</strong> 250 mg four times a day, up to 12.5 mg/kg if necessary.</p>
+                    <p><strong>Child 12–17 years:</strong> 500 mg four times a day, up to 1 g if necessary.</p>
+                    <p><strong>Adult:</strong> 500 mg every 6 hours, up to 1 g if necessary.</p>
+                </article>
+                <article>
+                    <strong>Prevention of recurrent cellulitis <em>(specialist use only)</em></strong>
+                    <p>Adult: 250 mg twice daily.</p>
+                </article>
+                <article>
+                    <strong>Prevention of secondary case of invasive Group A Streptococcal infection</strong>
+                    <p><strong>Child 1–11 months:</strong> 62.5 mg every 6 hours for 10 days.</p>
+                    <p><strong>Child 1–5 years:</strong> 125 mg every 6 hours for 10 days.</p>
+                    <p><strong>Child 6–11 years:</strong> 250 mg every 6 hours for 10 days.</p>
+                    <p><strong>Child 12–17 years:</strong> 250–500 mg every 6 hours for 10 days.</p>
+                    <p><strong>Adult:</strong> 250–500 mg every 6 hours for 10 days.</p>
+                </article>
+                <article>
+                    <strong>Prevention of pneumococcal infection in asplenia or sickle-cell disease</strong>
+                    <p><strong>Child 1–11 months:</strong> 62.5 mg twice daily.</p>
+                    <p><strong>Child 1–5 years:</strong> 125 mg twice daily.</p>
+                    <p><strong>Child 6–17 years:</strong> 250 mg twice daily.</p>
+                    <p><strong>Adult:</strong> 500 mg twice daily.</p>
+                </article>
+                <article>
+                    <strong>Prevention of recurrent erysipelas <em>(specialist use only)</em></strong>
+                    <p>Adult: 250 mg twice daily.</p>
+                </article>
+                <article>
+                    <strong>Acute sinusitis</strong>
+                    <p><strong>Child 1–11 months:</strong> 62.5 mg four times a day for 5 days.</p>
+                    <p><strong>Child 1–5 years:</strong> 125 mg four times a day for 5 days.</p>
+                    <p><strong>Child 6–11 years:</strong> 250 mg four times a day for 5 days.</p>
+                    <p><strong>Child 12–17 years:</strong> 500 mg four times a day for 5 days.</p>
+                    <p><strong>Adult:</strong> 500 mg four times a day for 5 days.</p>
+                </article>
+            </div>
+            <div class="section-title" style="margin-top:1.5rem;">
+                <span class="material-icons" aria-hidden="true">tips_and_updates</span>
+                Off-Label Uses
+            </div>
+            <ul>
+                <li>Prophylaxis against bacterial endocarditis in patients with congenital heart disease or acquired
+                    valvular disease undergoing dental/upper respiratory procedures</li>
+                <li>Moderate-to-severe gingivitis (with metronidazole)</li>
+                <li>Community-acquired pneumonia (CAP) in resource-limited settings caused by susceptible
+                    <em>Streptococcus pneumoniae</em></li>
+            </ul>
+            <div class="highlight-box">
+                ⚠️ Note:
+                <ul>
+                    <li>Off-label use should be guided by bacterial susceptibility, clinical judgment, and local
+                        protocols.</li>
+                    <li>Not effective against beta-lactamase-producing organisms or many Gram-negative bacteria.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="pharmacokinetics" tabindex="0" aria-label="Pharmacokinetics">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">biotech</span>
+                Pharmacokinetics
+            </div>
+            <article>
+                <p><strong>Molecular weight (free acids):</strong> 388.5</p>
+                <p><strong>Solubility (potassium salt):</strong></p>
+                <ul>
+                    <li>In Alcohol: 1 in 150</li>
+                    <li>In Water: 1 in 1.5</li>
+                </ul>
+            </article>
+
+            <div class="section-title" style="margin-top:1.5rem;">Pharmacokinetic Parameters</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Absorption</th>
+                        <td>Oral bioavailability 25–60%</td>
+                    </tr>
+                    <tr>
+                        <th>pKa</th>
+                        <td>2.79</td>
+                    </tr>
+                    <tr>
+                        <th>Log P</th>
+                        <td>2.09</td>
+                    </tr>
+                    <tr>
+                        <th>Time to peak plasma concentration</th>
+                        <td>For an oral dose of 500 mg, peak plasma concentrations of 3 to 5 µg/mL are reached in 30 to
+                            60 minutes post-dose</td>
+                    </tr>
+                    <tr>
+                        <th>Protein binding</th>
+                        <td>50–80%</td>
+                    </tr>
+                    <tr>
+                        <th>Volume of distribution</th>
+                        <td>At steady state, 35.4 L</td>
+                    </tr>
+                    <tr>
+                        <th>BBB</th>
+                        <td>Also found in the cerebrospinal fluid</td>
+                    </tr>
+                    <tr>
+                        <th>Half-life</th>
+                        <td>Liver, 35–70% of an oral dose is metabolized to penicilloic acid</td>
+                    </tr>
+                    <tr>
+                        <th>Excretion</th>
+                        <td>Urine (25%). Renal excretion may be delayed in neonates, young infants, and patients with
+                            renal impairment</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL9aMYIhWAqrNjhvqRsQiLEaCn22t7DN_K7Wnp9DT4BskUUSAx9OcdVSuBodEKFis_mP0&usqp=CAU"
+                    alt="Pharmacokinetic chart visual"
+                    style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+        </section>
+        <section id="safety" tabindex="0" aria-label="Important safety information, contraindications, warnings">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">warning</span>
+                Important Safety Information
+            </div>
+            <article>
+                <h3 style="margin-top: 0.5rem;">Advice to Patient</h3>
+                <ul>
+                    <li>Take 1 hour before or 2 hours after meals.</li>
+                    <li>Take at regular intervals, as scheduled.</li>
+                    <li>Take missed dose as soon as remembered unless it's time for the next dose — do not double dose.
+                    </li>
+                    <li>Inform your prescriber if diarrhea occurs, even 2+ months after completing penicillin therapy.
+                    </li>
+                    <li>Contact your prescriber immediately if you experience:
+                        <ul>
+                            <li>Unhealed sores, chills, or fever</li>
+                            <li>White plaques in the vagina or mouth</li>
+                            <li>Fatigue, purulent vaginal discharge, itching</li>
+                            <li>Hives, rash, or swelling of tongue/mouth/lips/throat</li>
+                        </ul>
+                    </li>
+                    <li>Complete the full course of therapy even if you feel better.</li>
+                    <li>Stay well hydrated (2–3 liters per day), unless otherwise advised.</li>
+                    <li>Patients on oral contraceptives should use additional contraception during therapy.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3 style="margin-top: 1.5rem;">Superinfection</h3>
+                <p>Prolonged use of penicillin may lead to overgrowth of non-susceptible organisms such as
+                    <em>Candida</em> or resistant bacteria.</p>
+                <p>If a superinfection occurs, appropriate treatment should be started immediately based on clinical
+                    assessment.</p>
+            </article>
+        </section>
+
+
+
+        <!-- Pregnancy Category -->
+        <section id="pregnancy" tabindex="0" aria-label="Pregnancy and lactation safety">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">pregnant_woman</span>
+                Pregnancy Category: B
+            </div>
+            <div class="highlight-box">
+                Penicillin V is considered safe during pregnancy and is commonly prescribed when clinically indicated.
+                Animal studies have not shown fetal risk, though no adequate and well-controlled studies exist in
+                pregnant women.
+            </div>
+
+            <div class="section-title" style="margin-top: 1.5rem;">
+                <span class="material-icons" aria-hidden="true">baby_changing_station</span>
+                Lactation
+            </div>
+            <div class="highlight-box">
+                Trace amounts may be found in breast milk, but Penicillin V is generally considered appropriate for use
+                during breastfeeding.
+                Caution is advised if adverse effects are suspected or if infant sensitivity is a concern.
+            </div>
+        </section>
+
+
+        <!-- Contraindications -->
+        <section id="contraindications" tabindex="0" aria-label="Contraindications section">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">block</span>
+                Contraindications
+            </div>
+            <ul>
+                <li>Known hypersensitivity to penicillins</li>
+                <li>Previous antibiotic-associated colitis</li>
+                <li>Severe renal impairment</li>
+                <li>Infectious mononucleosis</li>
+                <li>Hypersensitivity to other beta-lactams</li>
+            </ul>
+        </section>
+
+
+
+        <section id="adverse" tabindex="0" aria-label="Adverse Effects">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">report_problem</span>
+                Adverse Effects
+            </div>
+            <h4>Common:</h4>
+            <ul>
+                <li>Hypersensitivity reactions including skin rash, urticaria</li>
+                <li>Joint pain</li>
+                <li>Angioedema</li>
+                <li>Anaphylaxis</li>
+                <li>Serum sickness-like reactions</li>
+                <li>Diarrhea</li>
+            </ul>
+            <h4>Rare:</h4>
+            <ul>
+                <li>Haemolytic anaemia</li>
+                <li>Interstitial nephritis</li>
+                <li>Blood dyscrasias</li>
+                <li>Seizures</li>
+                <li>Antibiotic associated-colitis</li>
+                <li>Leukopenia</li>
+                <li>Cholestatic jaundice</li>
+            </ul>
+        </section>
+
+        <section id="penicillin-resistance" tabindex="0" aria-label="Penicillin Resistance section">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">science</span>
+                Penicillin Resistance
+            </div>
+            <ul>
+                <li>
+                    <strong>Beta-Lactamase Production:</strong>
+                    Bacteria produce enzymes that break down the β-lactam ring, inactivating penicillins. These enzymes
+                    may be chromosomal or plasmid-borne. Gram-positive bacteria secrete them, while Gram-negative
+                    bacteria retain them in the periplasmic space.
+                </li>
+                <li>
+                    <strong>Decreased Permeability to Drug:</strong>
+                    Resistance may occur due to reduced antibiotic entry caused by changes in the outer membrane or loss
+                    of porins (e.g., in <em>Pseudomonas</em>). Efflux pumps may also expel the drug, reducing its
+                    intracellular concentration.
+                </li>
+                <li>
+                    <strong>Altered PBPs (Penicillin-Binding Proteins):</strong>
+                    Mutated PBPs have low affinity for β-lactam antibiotics, preventing effective binding. This is a
+                    major resistance mechanism in MRSA.
+                </li>
+            </ul>
+        </section>
+
+
+
+        <section id="interactions" tabindex="0" aria-label="Drug interactions table">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">sync_alt</span>
+                Drug Interactions
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interacting Drug</th>
+                        <th>Mechanism</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Methotrexate</td>
+                        <td>Decreased renal clearance of methotrexate</td>
+                        <td>Increased methotrexate toxicity (bone marrow suppression, GI toxicity)</td>
+                    </tr>
+                    <tr>
+                        <td>Probenecid</td>
+                        <td>Inhibits renal tubular secretion of penicillin</td>
+                        <td>Increased serum levels and duration of action of penicillin V</td>
+                    </tr>
+                    <tr>
+                        <td>Tetracyclines</td>
+                        <td>Antagonistic effect</td>
+                        <td>May reduce the bactericidal activity of penicillin (avoid co-administration)</td>
+                    </tr>
+                    <tr>
+                        <td>Allopurinol</td>
+                        <td>May increase risk of rash with penicillin</td>
+                        <td>Especially noted in patients with hyperuricemia or gout</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="storage" tabindex="0" aria-label="Storage instructions">
+            <div class="section-title"><span class="material-icons" aria-hidden="true">inventory_2</span> Storage</div>
+            <p>
+                Store the tablets at room temperature and away from excess heat and moisture.
+            </p>
+        </section>
+
+
+
+        <section id="brands" tabindex="0" aria-label="Common brands in Pakistan with images">
+            <div class="section-title">
+                <span class="material-icons" aria-hidden="true">local_pharmacy</span>
+                Common Brands in Pakistan
+            </div>
+            <ul>
+                <li>
+                    <img src="https://image.made-in-china.com/202f0j00IfgoLNdcZPre/Penicillin-V-as-potassium-Tablets-250mg.webp"
+                        alt="Penicillin V Tablet" onerror="this.style.display='none'" />
+                    <h4>Penvik DS tablets (100mg) </h4>
+
+                </li>
+                <li>
+                    <img src="https://image.made-in-china.com/2f0j00HVcYZjdRfQbw/GMP-Penicillin-V-Suspension-125mg-5ml-100ml.webp"
+                        alt="Peni V suspension (125mg/5ml)" onerror="this.style.display='none'" />
+                    <h4>Peni V suspension (125mg/5ml)</h4>
+                </li>
+                <li>
+                    <img src="https://www.rxpointbd.com/wp-content/uploads/2023/11/9-Rxpoint-Penvik-DS500-mg.webp"
+                        alt="Penvik DS tablets (100mg) " onerror="this.style.display='none'" />
+                    <h4>Penvik DS tablets (100mg) </h4>
+                </li>
+                <li>
+                    <img src="https://www.grxstatic.com/d4fuqqd5l3dbz/products/cwf_tms/Package_10554.PNG"
+                        alt="Penicillin-VK oral solution USP (250mg/5ml) " onerror="this.style.display='none'" />
+                    <h4>Penicillin-VK oral solution USP (250mg/5ml) </h4>
+                </li>
+            </ul>
+        </section>
+
+
+
+
+        <section id="references" tabindex="0" aria-label="References">
+            <div class="section-title"><span class="material-icons" aria-hidden="true">menu_book</span> References</div>
+            <ol>
+                <li>BNF 2024-25, Pg: 617,618 </li>
+                <li> PharmaGuide, 31st edition (2024)</li>
+                <li> Therapeutics Drug-second edition, volume-2 </li>
+                <li> The Pharmaceutical Codex, Eleventh edition </li>
+                <li> Drug information system</li>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/Phenoxymethylpenicillin">Phenoxymethylpenicillin-Wikipedia</a>
+                </li>
+                <li><a href="https://go.drugbank.com/drugs/DB00417">DrugBank</a></li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Drug Monograph. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation active link highlight on scroll
+        const sections = document.querySelectorAll('main section[id], main section');
+        const navLinks = document.querySelectorAll('nav a.nav-link');
+
+        function setActiveLink() {
+            let scrollPos = window.scrollY + window.innerHeight / 5;
+            sections.forEach(section => {
+                if (!section.id) return;
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+                const navLink = document.querySelector(`nav a[href="#${section.id}"]`);
+
+                if (scrollPos >= top && scrollPos < bottom) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    if (navLink) navLink.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+
+        // Smooth scrolling for nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Set initial active link on load
+        window.addEventListener('load', setActiveLink);
+
+        // Fade-in scroll animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("section-visible");
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('main section').forEach(section => {
+            observer.observe(section);
+            // Add the section-visible class to all sections immediately to prevent hiding content on load
+            section.classList.add("section-visible");
+        });
+    </script>
+
+</body>
+
+</html>
